@@ -5,25 +5,21 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-.profile-page {
-    margin-top: 40px;
-}
-
+ main.container-fluid {
+    margin-top: 100px;
+ }
 .profile-picture-section {
     text-align: center;
 }
 
 .profile-picture {
     width: 100%; 
-    max-width: 340px; 
+    max-width: 300px; 
     height: auto; 
     border-radius: 10%;
     aspect-ratio: 1/1;
     object-fit: cover;
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:auto;
 }
 
 .change-photo-btn {
@@ -42,7 +38,6 @@ body {
 }
 
 .profile-form-section {
-    margin-top: 150px; 
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -84,14 +79,10 @@ footer {
 
 /* Media Query para tabletas en modo vertical */
 @media (max-width: 1024px) {
-    .profile-page {
-        margin-top: 50px;
-    }
 
     .profile-picture {
         width: 200px;
         height: auto;
-        margin-top: 30px;
     }
 
     .change-photo-btn {
@@ -99,7 +90,6 @@ footer {
     }
 
     .profile-form-section {
-        margin-top: 50px;
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -108,11 +98,6 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
-
-    .col-md-6 {
-        width: 48%;
-        margin-bottom: 5px;
     }
 
     button[type="submit"] {
@@ -127,15 +112,9 @@ footer {
 
 /* Media Query para pantallas pequeñas (Celu) */
 @media (max-width: 568px) {
-    .profile-page {
-        margin-top: 30px;
-    }
 
     .profile-picture {
-        width: 120px;
-        height: auto;
-        margin: 0 auto;
-        margin-top: 20px;
+        max-width: 200px;
     }
 
     .change-photo-btn {
@@ -158,28 +137,11 @@ footer {
         align-items: center;
     }
 
-    .col-md-6 {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
     button[type="submit"] {
         margin: 20px auto;
         width: 200px;
     }
 
-    .form-control {
-        width: 100%;
-    }
-
-    .dropdown {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    #navbarNav {
-        padding: 0.5rem 0.2rem;
-    }
 }
 :root {
     --main-bg-color: #f8f9fa;
