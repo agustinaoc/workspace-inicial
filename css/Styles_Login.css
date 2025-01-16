@@ -1,0 +1,174 @@
+body{ 
+    background: url('../img/Fondo_login.webp');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+  }
+  
+  .container {
+    box-shadow: 2px 8px 6px #93929137;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: auto;
+    padding: 40px 100px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #f9bf7843;
+    margin-bottom: 30%;
+    margin-top: 10% ;
+    border-color: #f3ba5800;
+    justify-content: center;
+
+  }
+  
+  h1 {
+    
+    text-align: center;
+    border-radius: 15px;
+    background-color: #ffd390;
+    max-width: 100%;
+    font-size: 35px;
+    color: #424045d6;
+    margin-left: 0px;
+    margin-right: 235px;
+}
+
+  
+  form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+}
+  
+  input {
+    font-size: 13px;
+    background-color: #ffe4b1b6;
+    padding: 5px 30px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+  }
+
+  #email, #password { 
+    border-color: #cf894300;
+  }
+  
+  button {
+    padding: 8px;
+    background-color: #cfe8add8;
+    color: rgb(71, 66, 66);
+    box-shadow: 1px 2px 6px #939291;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;  
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    align-items: center;
+  
+  }
+
+  button:hover { 
+    padding: 7px;
+    background-color: #cef4ce;
+    border: 15px;
+    font-size: 20px;
+    color: black;
+  }
+    
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e8ecb01d;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  a { 
+    text-decoration: none;
+    color: #052bb1
+  }
+
+  a:hover {
+    color: #0e0320;
+    font-size: 15px;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      width: 400px; 
+      padding: 40px 80px;
+    }
+  }
+  
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .container {
+      width: 300px; 
+      padding: 30px 60px;
+    }
+  
+    h1 {
+      font-size: 30px;
+      margin-left: 90px;
+      margin-bottom: 40px;
+    }
+  
+    input {
+      font-size: 12px; 
+      padding: 5px 20px; 
+      
+    }
+  
+    button {
+      font-size: 16px; 
+  }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 250px; 
+      padding: 20px 15px; 
+      margin: auto;
+    }
+    
+    h1 {
+      font-size: 25px; 
+      padding: 2px;
+      background: none;
+      box-shadow: none;
+      margin: 0 auto 15px auto; 
+      text-align: center; 
+      margin-top: 0px;
+    }
+  
+    input {
+      font-size: 11px; 
+      padding: 5px 10px;
+      margin: 5px auto; 
+    }
+  
+    button {
+      font-size: 15px; 
+      padding: 5px;
+      margin: 10px auto;
+    }
+  
+    footer {
+      font-size: 10px;
+      text-align: center; 
+    }
+  
+    a:hover {
+      font-size: 13px; 
+    }
+  }
+.swal2-confirm.swal2-styled {
+    background: #f78418;
+}
