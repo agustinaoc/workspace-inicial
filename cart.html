@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
@@ -29,16 +30,185 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
         </ul>
       </div>
+      <div class="right-container">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="emailButton">
+       <!--   Correo electrónico -->
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="cart.html">Mi carrito  <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span id="cartBadge" class="badge bg-secondary">0</span> </a></li>
+          <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+          <li><a class="dropdown-item" href="#" id="logout">Cerrar sesión</a></li>
+        </ul>
+      </div>
+      <div class="switch-container">
+        <button class="switch" id="switch">
+         <span><i class="fa fa-sun-o" aria-hidden="true"></i></span>
+        <span><i class="fa fa-moon-o" aria-hidden="true"></i></span>
+        </button>
+      </div>
+    </div>
     </div>
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div>
+        <h2>Mi carrito</h2>
+      </div>
+      <div class="articulos">
+        <h4>Artículos</h4><hr class="col-lg-10">
+        <div id="cartProducts"></div>
+      </div>
+      <div id="buyingForm">
+        <!--nav-items para la realizacion de la compra-->
+        <ul class="nav nav-tabs col-lg-10">
+          <li class="nav-item">
+              <a class="nav-link p-3 pb-1 active" id="entrega-tab" data-bs-toggle="pill" href="#entrega" role="tab" aria-controls="entrega" aria-selected="true">Entrega</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link p-3 pb-1" id="pago-tab" data-bs-toggle="pill" href="#pago" role="tab" aria-controls="pago" aria-selected="false">Pago</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link p-3 pb-1" id="resumen-tab" data-bs-toggle="pill" href="#resumen" role="tab" aria-controls="resumen" aria-selected="false">Resumen</a>
+          </li>
+      </ul>
+      <!--Contenido de los nav-items-->
+      <div class="tab-content col-lg-10" id="entregaTab">
+          <div class="tab-pane fade show active" id="entrega" role="tabpanel" aria-labelledby="entrega-tab">
+            <!--Tipo de envio-->
+              <h6>Tipo de envío</h6>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipoEnvio" id="standard" value="option1" checked>
+                  <label class="form-check-label" for="standard">
+                      Standard 12 a 15 días (5%)
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipoEnvio" id="express" value="option2">
+                  <label class="form-check-label" for="express">
+                      Express 5 a 8 días (7%)
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipoEnvio" id="premium" value="option3">
+                  <label class="form-check-label" for="premium">
+                      Premium 2 a 5 días (15%)
+                  </label>
+              </div>
+              <h6>Dirección de envío</h6>
+              <div class="row">
+                <div class="form-floating col-sm-5 my-2">
+                    <input type="text" class="form-control" id="departamento" placeholder="Departamento" required>
+                    <label class="ms-2" for="departamento">Departamento</label>
+                </div>
+                <div class="form-floating col-sm-5 my-2">
+                    <input type="text" class="form-control" id="localidad" placeholder="Localidad" required>
+                    <label class="ms-2" for="localidad">Localidad</label>
+                </div>
+                <div class="form-floating col-sm-5 my-2">
+                    <input type="text" class="form-control" id="calle" placeholder="Calle" required>
+                    <label class="ms-2" for="calle">Calle</label>
+                </div>
+                <div class="form-floating col-sm-5 my-2">
+                    <input type="number" class="form-control" id="numero" placeholder="Número" required>
+                    <label class="ms-2" for="numero">Número</label>
+                </div>
+                <div class="form-floating col-sm-5 my-2">
+                    <input type="text" class="form-control" id="esquina" placeholder="Esquina" required>
+                    <label class="ms-2" for="esquina">Esquina</label>
+                </div>
+            </div>
+          </div>
+          <!-- Forma de pago -->
+          <div class="tab-pane fade" id="pago" role="tabpanel" aria-labelledby="pago-tab">
+            <h6>Tipo de pago</h6>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoPago" id="credito" value="credito" checked>
+                <label class="form-check-label" for="credito">
+                    Tarjeta de crédito
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipoPago" id="debito" value="debito">
+                <label class="form-check-label" for="debito">
+                    Tarjeta de débito
+                </label>
+            </div>
+            <!-- Contenido de las distintas tarjetas -->
+            <div id="debitoForm" class="metodoPagoForm row" >
+                <!-- Formulario para débito -->
+                <div>
+                    <label class="form-label col-12 m-2" for="numeroD">Número</label>
+                    <input class="form-control" type="number" id="numeroD" name="numeroD">
+                </div>
+                <div>
+                    <label class="form-label col-12 m-2" for="nombreD">Nombre y Apellido que figura en la tarjeta</label>
+                    <input class="form-control" type="text" id="nombreD" name="nombreD">
+                </div>
+                <div>
+                    <label class="form-label col-12 m-2" for="vencimientoD">Fecha de Vencimiento</label>
+                    <input class="form-control" type="month" id="vencimientoD" name="vencimientoD">
+                </div>
+                <div class="col-12">
+                    <label class="form-label m-2" for="codigoD">Código de seguridad</label>
+                    <input class="form-control" type="number" id="codigoD" name="codigoD">
+                </div>
+            </div>
+
+            <div id="creditoForm" class="metodoPagoForm row">
+                <!-- Formulario para crédito -->
+                <div>
+                    <label class="form-label col-12 m-2" for="numeroC">Número</label>
+                    <input class="form-control" type="number" id="numeroC" name="numeroC">
+                </div>
+                <div>
+                    <label class="form-label col-12 m-2" for="cuotas">Cuotas disponibles</label>
+                    <select class="form-select form-control" name="cuotas" id="cuotas">
+                        <option selected value="none">¿En cuántas cuotas deseas pagar?</option>
+                        <option value="1">1 cuota</option>
+                        <option value="3">3 cuotas</option>
+                        <option value="6">6 cuotas</option>
+                        <option value="12">12 cuotas</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label col-12 m-2" for="nombreC">Nombre y Apellido que figura en la tarjeta</label>
+                    <input class="form-control" type="text" id="nombreC" name="nombreC">
+                </div>
+                <div>
+                    <label class="form-label col-12 m-2" for="vencimientoC">Fecha de Vencimiento</label>
+                    <input class="form-control" type="month" id="vencimientoC" name="vencimientoC">
+                </div>
+                <div>
+                    <label class="form-label col-12 m-2" for="codigoC">Código de seguridad</label>
+                    <input class="form-control" type="number" id="codigoC" name="codigoC">
+                </div>
+            </div>
+          </div>
+
+          <!--Resumen de la compra-->
+          <div class="tab-pane fade" id="resumen" role="tabpanel" aria-labelledby="resumen-tab">
+            <h6>Costos</h6>
+            <div class="row">
+            <div class="col-6">             
+              <h6>Subtotal</h6>
+              <h6>Costo de envío</h6>
+              <h6>Total</h6>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>aquí va el subtotal</li>
+                <li>aquí va el costo de envio</li>
+                <li>aquí va el total</li>
+              </ul>
+            </div>
+          </div>
+            <button type="button" id="finalizarCompra" class="btn btn-warning mt-md-5">Finalizar compra</button>          
+          </div>
+      </div>
+  </div>
       </div>
     </div>
   </main>
@@ -58,9 +228,9 @@
       <div></div>
     </div>
   </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>

@@ -39,3 +39,55 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+function login_check() {
+
+  let email = localStorage.getItem("email")
+
+  if (localStorage.getItem("email") == null ){
+  window.location.href = "login.html";
+   } else {
+    document.getElementById("emailButton").innerHTML = email
+   }
+   document.getElementById("logout").addEventListener("click", function () {
+    localStorage.removeItem("email");
+    window.location.href = "login.html"; 
+});
+}
+
+login_check();
+
+ // Lógica de modo oscuro
+ const btnSwitch = document.querySelector('#switch');
+
+ // Cargar preferencia de modo oscuro desde localStorage
+ if (localStorage.getItem('dark-mode') === 'true') {
+     document.body.classList.add('dark');
+     btnSwitch.classList.add('active');
+ }
+
+ btnSwitch.addEventListener('click', () => {
+     document.body.classList.toggle('dark');
+     btnSwitch.classList.toggle('active');
+
+     // Guardar el estado del modo oscuro en localStorage
+     if (document.body.classList.contains('dark')) {
+         localStorage.setItem('dark-mode', 'true');
+     } else {
+         localStorage.setItem('dark-mode', 'false');
+     }
+ });
+
+// Función para actualizar el badge del carrito
+function actualizarBadgeCarrito() {
+  const cart = JSON.parse(localStorage.getItem("carrito")) || [];
+  const badge = document.getElementById("cartBadge");
+  const totalProductos = cart.reduce((acc, producto) => acc + producto.cantidad, 0);
+  if (badge) {
+    badge.textContent = totalProductos;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarBadgeCarrito();
+});
