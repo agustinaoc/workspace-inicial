@@ -199,10 +199,6 @@ h2.display-7 {
 /*Chiquito*/
 @media (max-width: 575px) {
 
-    * {
-        max-width: 100%;
-    }
-
     /*Body*/
     body {
         align-items: normal !important;
@@ -211,6 +207,14 @@ h2.display-7 {
 
     .row #products-container {
         max-width: 100%;
+    }
+    div.row.mb-4 {
+        display: grid;
+    }
+
+    .filters-container {
+        padding-left: calc(var(--bs-gutter-x)* 0.75);
+        padding-right: calc(var(--bs-gutter-x)* 0.75);
     }
 
     .vendidos-container {
@@ -251,8 +255,7 @@ h2.display-7 {
     }
 
     .pb-5 {
-        padding-bottom: 0% !important;
-        padding-left: var(--bs-gutter-x, .75rem);
+        padding-right: var(--bs-gutter-x, .75rem);
     }
 
     /*Letra*/
