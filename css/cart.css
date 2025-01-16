@@ -1,0 +1,187 @@
+body {
+    font-family: Raleway;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 80px;
+    text-align: center;
+    font-weight: 700;
+}
+h6 {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-input {
+    width: 50px;
+    max-width: 50px;
+    text-align: center;
+}
+
+.btn-warning {
+    background-color: #facd8a;
+    border-color: #facd8a;
+    color: black;
+    font-size: 1rem;
+}
+body.dark .btn-warning {
+    background-color: #facd8a !important;
+    border-color: #facd8a !important;
+    color: black;
+}
+.btn-warning:hover {
+    background-color: #facd8a;
+    border-color: #facd8a;
+    color: black;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.fa-trash-o {
+    color: #facd8a;
+}
+.nav-tabs .nav-link {
+    background-color:#facd8a;
+    color: black;
+}
+.nav-tabs .nav-link:hover {
+    color: gray !important;
+}
+.form-check-input:checked {
+    background-color: #f78418;
+    border-color: #f78418;
+    box-shadow: none;
+}
+@media(min-width: 575px) {
+    .metodoPagoForm .form-control, .metodoPagoForm .form-select {
+        width: 62%;
+    }
+    input#vencimientoC.form-control, input#vencimientoD.form-control, input#codigoC.form-control, input#codigoD.form-control {
+        width: 35%;
+    }
+}
+@media(min-width: 767px) {
+    input#vencimientoC.form-control, input#vencimientoD.form-control, input#codigoC.form-control, input#codigoD.form-control {
+        width: 25%;
+    }
+}
+@media(min-width: 992px) {
+    .articulos, #buyingForm {
+        margin-left: 15%;
+    }
+    .metodoPagoForm .form-control, .metodoPagoForm .form-select {
+        width: 40%;
+    }
+}
+@media (max-width: 1024px) {
+    .product-row {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 770px) {    
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 575px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        padding: .25rem .5rem !important;
+    }
+
+    p.d-block {
+        margin-left: 33%;
+        font-weight: 600;
+    }
+
+    .sub-text {
+        text-align: right;
+    }
+
+    .subtotal {
+        font-weight: 600;
+    }
+
+    .sub-text, .subtotal, p.col-4 {
+        margin-bottom: 0;
+    }
+
+    .count {
+        margin-left: 56%;
+    }
+
+    hr.col-12 {
+        width: 94.5%;
+        padding-right: var(--bs-gutter-x, .75rem);
+        padding-left: var(--bs-gutter-x, .75rem);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    
+    .product-row img {
+        max-width: 50px;
+    }
+
+    .quantity-input {
+        width: 40px;
+    }
+
+    .subtotal {
+        font-size: 0.8rem;
+        padding-left: 10px;
+    }
+}
+:root {
+    --main-bg-color: #f8f9fa;
+    --color: #2c2f33;
+  }
+  body.dark {
+    --main-bg-color: #2c2f33;
+    --color: #f8f9fa;
+  }
+.swal2-confirm.swal2-styled {
+    background: #f78418;
+}
+div:where(.swal2-container) div:where(.swal2-popup){
+    background-color: var(--main-bg-color) !important;
+    color: var(--color) !important;
+}
+/*Style Badge*/
+
+#cartBadge {
+    background-color: #ffaf53be !important;
+    color: white;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+  }
